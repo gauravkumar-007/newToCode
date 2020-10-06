@@ -1,0 +1,79 @@
+<!--The html code for the required form is given below with screenshots of the code to refer fro = -->
+<!DOCTYPE html>
+<html>
+  <body>
+  <!--making a table with width 65% of the page and adding cellpading and cellspacing as required-->
+    <table style="width: 65%" frame="border" cellpadding="15" cellspacing="5">
+      <tr><!--row 1-->
+        <td><h2>Internet Usage Survey</h2></td>
+        <td></td>
+      </tr>
+      <tr><!--row 2-->
+        <td><p style="width: 180%;">This survey is being conducted to help identify 
+        the internet usage patterns of our custormers.</p></td>
+        <td></td> 
+      </tr>
+      <tr><!--row 3-->
+        <td><p style="width: 180%;">Please take a few moment to complete and submit this short form.
+        Thank you for your cooperation.</p></td>
+        <td></td>
+      </tr>
+      <tr><!--row 4-->
+        <td>What type of internet connections do you have?(Select One)</td>
+        <td>
+        <!--using the select option for the dropdown menu-->
+          <select name="internet speed">
+            <option value="High Speed Cable">High Speed Cable</option>
+            <option value="Normal Speed Cable">Normal Speed Cable</option>
+            <option value="Wifi">Wifi</option>
+            <option value="Mobile Data">Mobile Data</option>
+          </select>
+        </td>
+      </tr>
+      <tr><!--row 5-->
+        <td>What type of computer do you use most at home?</td>
+        <td>
+        <!--using radio buttons for selection from desktop or laptop-->
+          <input name="computer" type="radio" value="Desktop">Desktop</input>
+          <input name="computer" type="radio" value="Laptop">Laptop</input>
+        </td>
+      </tr>
+      <tr><!--row 6-->
+        <td>What would you describe your main reason of using the internet?</td>
+        <td>
+        <!--again using the radio buttons to choose the reason-->
+          <input name="reason" type="radio" value="work-related">To do work-related activities</input><br>
+          <input name="reason" type="radio" value="school-related">To do school-related activities</input><br>
+          <input name="reason" type="radio" value="entertainment">for entertainment purposes</input><br>
+          <input name="reason" type="radio" value="other">other activities</input><br>
+        </td>
+      </tr>
+      <tr><!--row 7-->
+      <!--manipulating the width of the placeholder for clean formatting-->
+        <td><p style="width: 150%;">Please comment on your opinions concerning Internet privacy and safety.</p>
+          <textarea name="opinions" placeholder=" " style="height: 100px; width: 125%;"></textarea>
+        </td>
+        <td></td>
+      </tr>
+      <tr><!--row 8-->
+      <!--taking the names of user-->
+        <td>First Name:<br>
+        <input type="text" name="FirstName"></input></td>
+        <td>Last Name:<br>
+        <input type="text" name="LastName"></input></td>
+      </tr>
+      <tr><!--row 9-->
+      <!--submit and reset-->
+        <td>
+          <div align="right"> 
+            <input type="submit" value="Submit">
+          </div>
+        </td>
+        <td>
+          <input type="reset" value ="Clear Form"></input>
+        </td>
+      </tr>
+      
+    </table>
+  </body>
+</html>
