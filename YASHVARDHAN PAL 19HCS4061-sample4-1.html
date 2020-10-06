@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function validate() {
+                let nameElement = document.getElementById("nametxt");
+                let rollElement = document.getElementById("rolltxt");
+                let panElement = document.getElementById("PAN");
+                let pinElement = document.getElementById("pincode");
+                let cgpaElement = document.getElementById("CGPA");
+                let addressElement = document.getElementById("Address");
+                let ageElement = document.getElementById("Age");
+                let genderElement = document.getElementById("gender");
+
+                let name = nameElement.value;
+                let pin = pinElement.value;
+                let pan = panElement.value;
+                let cgpa = cgpaElement.value;
+                let address = addressElement.value;
+                let age = ageElement.value;
+                let gender = genderElement.value;
+                let roll = rollElement.value;
+                let error;
+                let nameregExp = new RegExp("^([A-Z]+[ ]?){1,3}$");
+                let rollregExp = new RegExp("^19HCS40[0-9]{2}$");
+                let ageregExp = new RegExp("^[1-9][0-9]$");
+                let genderregExp = new RegExp("^male|Male|female|Female|others$");
+                //let addressregExp = new RegExp("^[ ]?$");
+                let pinregExp = new RegExp("^[1-9][0-9]{5}$");
+                let panregExp = new RegExp("^[A-Z]{5}[0-9]{4}[A-Z]$");
+                let cgparegExp = new RegExp("^[0-9]{2}\.[0-9]$");
+
+                if(name == "" || roll == "" || gender == ""|| pin == ""|| pan == ""|| cgpa == ""|| address == ""|| age == "") {
+                    error = "All options are mandatory. They can not be left blank."
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+                if(! nameregExp.test(name)) {
+                    error = "Provided Name is not in correct form.";
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+
+                if(! rollregExp.test(roll)) {
+                    error = "Provided roll number is not correct.";
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+                if(! pinregExp.test(pin)) {
+                    error = "Incorrect PIN.";
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+                if(! panregExp.test(pan)) {
+                    error = "Incorrect PAN.";
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+                if(! ageregExp.test(age)) {
+                    error = "Provided age is not correct.";
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+                if(! genderregExp.test(gender)) {
+                    error = "Invalid gender";
+                    document.getElementById("errlbl").innerHTML = error;
+                    return false;
+                }
+
+
+
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="return validate()">
+            Enter your Name: <input type="text" id="nametxt" name="uname"><br><br>
+            Enter your Gender (male/female/other): <input type="text" id="gender" name="ugender"><br><br>
+            Enter your Pincode no: <input type="text" id="pincode" name="upin"><br><br>
+            Enter your Roll no: <input type="text" id="rolltxt" name="uroll"><br><br>
+            Enter your PAN no: <input type="text" id="PAN" name="upan"><br><br>
+            Enter your CGPA: <input type="text" id="CGPA" name="ucgpa"><br><br>
+            Enter your Age: <input type="text" id="Age" name="uage"><br><br>
+            Enter your Address: <input type="text" id="Address" name="uaddress"><br><br>
+            <label style="color: red;" id="errlbl"></label><br><br>
+            <input type="submit" value="Submit the form">
+        </form> 
+    </body>
+</html>
+
+<!--
+    name
+    gender
+    pincode
+    rollno
+    PAN
+    cgpa
+    age
+    address
+-->
